@@ -7,18 +7,24 @@ constructor(props) {
     super(props)
     
     this.state = {
-	    
+		editorContent: "",
+		previewContent: ""
     }
     
     this.updatePreview = this.updatePreview.bind(this);
 }
 
-updatePreview() {
-	
+updatePreview(event) {
+	this.setState({
+      previewContent: event.target.value
+    });
 }
 
 render() {
 	return (
-		<textarea id="editor" onChange={ this.updatePreview }></textarea>
+		<div id="wrapper">
+			<textarea id="editor" onChange={ this.updatePreview }></textarea>
+			<div id="preview">{ this.state.previewContent }</div>
+		</div>
 	)}
 }
