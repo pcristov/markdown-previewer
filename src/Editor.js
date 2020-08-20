@@ -59,22 +59,27 @@ And here. | Okay. | I think we get it.
     this.updatePreview = this.updatePreview.bind(this);
 }
 
+mark(input) {
+	marked.setOptions({ breaks: true });
+	return marked(input);
+}
+
 componentDidMount() {
 	this.setState({
-      previewContent: marked(this.state.editorContent, { sanitize: true })
+      previewContent: this.mark(this.state.editorContent)
     });
 }
 
 updatePreview(event) {
 	this.setState({
-      previewContent: marked(event.target.value, { sanitize: true })
+      previewContent: this.mark(event.target.value)
     });
 }
 
 render() {
 	return (
 		<div id="wrapper">
-			<textarea id="editor" onChange={ this.updatePreview }>{ this.state.editorContent }</textarea>
+			<textarea id="editor" onChange={ this.updatePreview } defaultValue={ this.state.editorContent }></textarea>
 			<div id="preview" dangerouslySetInnerHTML={{ __html: this.state.previewContent }}></div>
 		</div>
 	)}
