@@ -1,0 +1,15 @@
+#editor {
+	outline: none;
+	width: 575px;
+	height: 175px;
+	margin: 20px auto;
+	padding: 10px 15px;
+	resize: vertical;
+}
+
+#preview {
+	width: 575px;
+	border: 1px solid #16e9ff;
+	margin: 20px auto;
+	padding: 10px 15px;
+}
