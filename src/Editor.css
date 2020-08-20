@@ -1,6 +1,6 @@
 #editor {
 	outline: none;
-	width: 575px;
+	width: 700px;
 	height: 175px;
 	margin: 20px auto;
 	padding: 10px 15px;
@@ -8,9 +8,9 @@
 }
 
 #preview {
-	width: 575px;
+	width: 700px;
 	border: 1px solid #16e9ff;
-	margin: 0 auto;
+	margin: 0 auto 20px;
 	padding: 10px 15px;
 }
 
